@@ -10,6 +10,10 @@ function PLAYER:CanLoadLoc()
 	return false
 end
 
+hook.Add( "PlayerInitialSpawn", "FullLoadSetup", function( ply )
+	ply.Savelocs = {}	
+end )
+
 function SaveLocSave( ply, cmd, args )
     local id = #ply.Savelocs + 1
     
